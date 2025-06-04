@@ -29,11 +29,11 @@ class Solution(object):
     def isPalindrome(self, x):
         if x < 0:
             return False
-        rev = 0
-        temp = x
-        while temp > 0:
-            d = temp % 10
-            rev = rev * 10 + d
-            temp = temp // 10
-        return x == rev
-        
+        reverse = 0
+        temporary = x
+        while temporary > 0:
+            digit = temporary % 10
+            reverse = reverse * 10 + digit
+            temporary = temporary / 10
+        return reverse == x              
+       
