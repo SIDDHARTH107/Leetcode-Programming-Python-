@@ -689,3 +689,40 @@ class Solution(object):
             temp = temp + chr(ord("A") + rem)
             n = n // 26
         return temp[::-1]
+
+21.
+Given an integer num, return a string of its base 7 representation.
+
+Example 1:
+
+Input: num = 100
+Output: "202"
+Example 2:
+
+Input: num = -7
+Output: "-10"
+
+Mode: Easy
+
+class Solution(object):
+    def convertToBase7(self, num):
+        if num == 0:
+            return "0"
+
+        is_negative = num < 0
+        if is_negative:
+            num = -num
+
+        digits = []
+        
+        while num > 0:
+            rem = num % 7
+            digits.append(str(rem))
+            num = num // 7
+        
+        base7 = ''.join(reversed(digits))
+        
+        if is_negative:
+            base7 = '-' + base7
+        
+        return base7
