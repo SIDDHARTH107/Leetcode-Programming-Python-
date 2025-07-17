@@ -819,3 +819,30 @@ class Solution(object):
             if word.startswith(searchWord):
                 return idx + 1  # 1-based index
         return -1
+
+25.
+Given an integer n, add a dot (".") as the thousands separator and return it in string format.
+
+Example 1:
+
+Input: n = 987
+Output: "987"
+Example 2:
+
+Input: n = 1234
+Output: "1.234"
+
+Mode: Easy
+
+class Solution(object):
+    def thousandSeparator(self, n):
+        sn = str(n)
+        res = ""
+        count = 0
+        for i in range(len(sn) - 1, -1, -1):
+            res = res + sn[i]
+            count = count + 1
+            if count == 3 and i != 0:
+                res = res + '.'
+                count = 0
+        return res[::-1]
