@@ -939,3 +939,4 @@ class Solution(object):
             return 0
         else:
             return 1 + (num - 1) % 9
+# There is a formula for digital root in number theory which is to sum up all the digits till it's a single digit number
