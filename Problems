@@ -1275,5 +1275,5 @@ Mode: Easy
 from datetime import datetime
 class Solution(object):
     def dayOfYear(self, date):
-        datetime1 = datetime.strptime(date, "%Y-%m-%d")
-        return datetime1.timetuple().tm_yday
+        datetime1 = datetime.strptime(date, "%Y-%m-%d") # Converts string input to datetime format which is given inside the function
+        return datetime1.timetuple().tm_yday # Returns the sequence of day in the year
