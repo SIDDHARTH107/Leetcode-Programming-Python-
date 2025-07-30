@@ -1517,3 +1517,21 @@ class Solution(object):
         actual_sum = sum(nums)
         expected_sum = (n * (n + 1)) // 2
         return expected_sum - actual_sum
+
+44.
+Given two binary strings a and b, return their sum as a binary string.
+
+Example 1:
+
+Input: a = "11", b = "1"
+Output: "100"
+Example 2:
+
+Input: a = "1010", b = "1011"
+Output: "10101"
+
+Mode: Easy
+
+class Solution:
+    def addBinary(self, a, b):
+        return bin(int(a, 2) + int(b, 2))[2:]
