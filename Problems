@@ -1535,3 +1535,60 @@ Mode: Easy
 class Solution:
     def addBinary(self, a, b):
         return bin(int(a, 2) + int(b, 2))[2:]
+
+45.
+Given two strings s and t, determine if they are isomorphic.
+
+Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+
+All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
+
+Example 1:
+
+Input: s = "egg", t = "add"
+
+Output: true
+
+Explanation:
+
+The strings s and t can be made identical by:
+
+Mapping 'e' to 'a'.
+Mapping 'g' to 'd'.
+Example 2:
+
+Input: s = "foo", t = "bar"
+
+Output: false
+
+Explanation:
+
+The strings s and t can not be made identical as 'o' needs to be mapped to both 'a' and 'r'.
+
+Example 3:
+
+Input: s = "paper", t = "title"
+
+Output: true
+
+Mode: Easy
+
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        if len(s) != len(t):
+            return False
+    
+        s_to_t = {}
+        mapped_chars = set()
+        
+        for c1, c2 in zip(s, t):
+            if c1 not in s_to_t:
+                if c2 in mapped_chars:
+                    # c2 is already mapped to another char in s
+                    return False
+                s_to_t[c1] = c2
+                mapped_chars.add(c2)
+            else:
+                if s_to_t[c1] != c2:
+                    return False
+        return True
