@@ -1818,3 +1818,9 @@ class Solution(object):
                     temp.append(k)
             temp = list(set(temp))
             return temp
+
+Or 
+
+class Solution(object):
+    def intersection(self, nums1, nums2):
+        return list(set(nums1) & set(nums2)) # '&' performs intersection
