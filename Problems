@@ -3033,3 +3033,43 @@ class Solution:
                 return True
 
         return False
+
+88.
+Given an integer n, find the digit that occurs least frequently in its decimal representation. If multiple digits have the same frequency, choose the smallest digit.
+
+Return the chosen digit as an integer.
+
+The frequency of a digit x is the number of times it appears in the decimal representation of n. 
+
+Example 1:
+
+Input: n = 1553322
+
+Output: 1
+
+Explanation:
+
+The least frequent digit in n is 1, which appears only once. All other digits appear twice.
+
+Example 2:
+
+Input: n = 723344511
+
+Output: 2
+
+Explanation:
+
+The least frequent digits in n are 7, 2, and 5; each appears only once.
+
+Mode: Easy
+
+class Solution:
+    def getLeastFrequentDigit(self, n: int) -> int:
+        check = Counter(str(n))
+        min_freq = min(check.values())
+        temp = []
+        for char, freq in check.items():
+            if freq == min_freq:
+                temp.append(char)
+        answer = sorted(temp)
+        return int(answer[0])
