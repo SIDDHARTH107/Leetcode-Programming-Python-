@@ -3073,3 +3073,34 @@ class Solution:
                 temp.append(char)
         answer = sorted(temp)
         return int(answer[0])
+
+89.
+You are given a positive integer n.
+
+Return the integer obtained by removing all zeros from the decimal representation of n.
+
+Example 1:
+
+Input: n = 1020030
+
+Output: 123
+
+Explanation:
+
+After removing all zeros from 1020030, we get 123.
+
+Example 2:
+
+Input: n = 1
+
+Output: 1
+
+Explanation:
+
+1 has no zero in its decimal representation. Therefore, the answer is 1.
+
+Mode: Easy
+
+class Solution:
+    def removeZeros(self, n: int) -> int:
+        return int(str(n).replace("0", ""))
