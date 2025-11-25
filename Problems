@@ -3270,7 +3270,7 @@ Mode: Easy
 
 class Solution:
     def maxDifference(self, s: str) -> int:
-        ctr = Counter(list(s))
+        ctr = Counter(s)
         odd = []
         even = []
         for char, freq in ctr.items():
@@ -3278,8 +3278,5 @@ class Solution:
                 odd.append(freq)
             if freq % 2 == 0:
                 even.append(freq)
-
-        odd_list = max(odd) if odd else 0
-        even_list = min(even) if even else 0
     
-        return odd_list - even_list 
+        return max(odd) - min(even) 
